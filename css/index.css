@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url('reset.css');
 
+
 body, html, #wrap { height:100% }
 .row { max-width:1200px; margin:0 auto; 
        padding:0 10px }
@@ -55,7 +56,7 @@ body, html, #wrap { height:100% }
 .slide-outer .prevArrow { left: 7%; z-index: 999;}
 .slide-outer .nextArrow { right: 7%; }
 
-/* 동그라미 버튼 */
+/* 동그라미 버튼
 .slide-outer .slick-dots {
     position: absolute; bottom: 20px; width: 100%;
     text-align: center;
@@ -70,15 +71,40 @@ body, html, #wrap { height:100% }
 .slide-outer .slick-dots li.slick-active button {
     background: #f76f6f; width: 40px;
     border-radius: 50px;
-}
+} */
 
+/* 막대(bar) 버튼 애니메이션 */
+.slide-outer .slick-dots {
+    position: absolute; bottom: 20px; width: 100%;
+    text-align: center;
+}
+.slide-outer .slick-dots li { 
+    display: inline-block; width: 100px;
+    height: 3px; background: #777;
+    margin: 0 5px; position: relative; }
+.slide-outer .slick-dots li button {
+    width: 0%; height: 3px;
+    background: #999;
+    text-indent: -999999px;
+    overflow: hidden;
+    position: absolute;
+    top: 0; left: 0;
+}
+.slide-outer .slick-dots li.slick-active button {
+    background: #fff; width: 100%;
+    animation: progressbar 2.5s both;
+}
+@keyframes progressbar {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
 
 /* 슬라이드 자동재생/멈춤 버튼 */
 .slide-outer .plpa {
     font-size: 15px; color: #fff;
     background: none;
-    position: absolute; bottom: 20px; 
-    left: 50%; margin-left: 55px;
+    position: absolute; bottom: 18px; 
+    left: 50%; margin-left: 180px;
     
 }
 
@@ -92,7 +118,7 @@ body, html, #wrap { height:100% }
     opacity: 0; }
 .slide-outer .slide.slick-active .text { opacity: 1; }
 .slide-outer .slide .text p:nth-child(1) {
-    font-size: 45px; width: 600px;
+    font-size: 3.75vw; max-width: 600px;
     text-shadow: 2px 2px 5px #555;
     border-bottom: 1px solid#999;
     padding-bottom: 10px;
@@ -117,9 +143,28 @@ body, html, #wrap { height:100% }
 
 
 
-.section-outer .section:nth-child(2) {
-    background:limegreen
-}
+
+
+/* 포트폴리오 갤러리 : 두번째 section */
+.portfolio h2 { 
+    font-size: 3.75vw; text-align: center;
+    padding: 25px 0; }
+.portfolio, ul.gallery { height: 100%; }
+.portfolio ul.gallery li { 
+    float: left; width: 25%;
+    height: 38%; overflow: hidden;
+    padding: 10px; margin-bottom: 1%; }
+
+
+
+/* 갤러리 팝업박스 */
+.portfolio .galleryPopup {
+    position: fixed; top: 0; bottom: 0; 
+    left: 0; right: 0; background: rgba(0,0,0,0.8);
+    z-index: 999999999; }
+
+
+
 .section-outer .section:nth-child(3) {
     background:skyblue
 }
