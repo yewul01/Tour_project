@@ -1,0 +1,128 @@
+@charset "utf-8";
+@import url('reset.css');
+
+body, html, #wrap { height:100% }
+.row { max-width:1200px; margin:0 auto; 
+       padding:0 10px }
+
+.header-outer { background:rgba(0,0,0,0.5); 
+    position:fixed; width:100%; z-index:99999;
+}
+#header { position:relative; height:116px  }
+#header h1 { padding-top:40px }
+#header .open-gnb { display:none }
+#header .nav { position:absolute; 
+    top:50%; right:0;
+    transform:translateY(-50%); }
+#header .nav .depth1 > li { display:inline-block }
+#header .nav .depth1 > li > a { 
+    font-size:18px; color:#fff;  
+    padding:0px 30px; 
+}
+
+.outlayer { display:none;
+    position:fixed; top:0; bottom:0;
+    left:0; right:0;
+    background:rgba(0,0,0,0.5);
+    z-index:9999;
+}
+.outlayer.on { display:block }
+
+.section-outer { height:100% }
+.section-outer .section { height:100% }
+.section-outer .section:nth-child(1) .slide-outer { height:100% }
+.section-outer .section:nth-child(1) .slide-inner { height:100%; }
+.section-outer .section:nth-child(1) .slide { height:100%;
+    background-size:cover; background-repeat:no-repeat;
+    background-position:center;
+}
+.section-outer .section:nth-child(1) .slide1 {
+    background-image:url(../img/mainslide01.jpg)
+}
+.section-outer .section:nth-child(1) .slide2 {
+    background-image:url(../img/mainslide02.jpg)
+}
+.section-outer .section:nth-child(1) .slide3 {
+    background-image:url(../img/mainslide03.jpg)
+}
+/* 화살표 버튼 */
+.slide-outer { position: relative; }
+.slide-outer .marrow { 
+    font-size: 80px; color: #fff; 
+    position: absolute; top: 50%;
+    transform: translateY(-50%); 
+    background: none; }
+.slide-outer .prevArrow { left: 7%; z-index: 999;}
+.slide-outer .nextArrow { right: 7%; }
+
+/* 동그라미 버튼 */
+.slide-outer .slick-dots {
+    position: absolute; bottom: 20px; width: 100%;
+    text-align: center;
+}
+.slide-outer .slick-dots li { display: inline-block; }
+.slide-outer .slick-dots li button { 
+    width: 15px; height: 15px;
+    border-radius: 50%;
+    background: #fff;
+    text-indent: -999999px;
+    overflow: hidden; margin: 0 5px; }
+.slide-outer .slick-dots li.slick-active button {
+    background: #f76f6f; width: 40px;
+    border-radius: 50px;
+}
+
+
+/* 슬라이드 자동재생/멈춤 버튼 */
+.slide-outer .plpa {
+    font-size: 15px; color: #fff;
+    background: none;
+    position: absolute; bottom: 20px; 
+    left: 50%; margin-left: 55px;
+    
+}
+
+
+/* 슬라이드 위에 텍스트박스 애니메이션 */
+.slide-outer .slide { position: relative; }
+.slide-outer .slide .text {
+    position: absolute; color: #fff;
+    width: 100%; text-align: center;
+    top: 50%; transform: translateY(-50%);
+    opacity: 0; }
+.slide-outer .slide.slick-active .text { opacity: 1; }
+.slide-outer .slide .text p:nth-child(1) {
+    font-size: 45px; width: 600px;
+    text-shadow: 2px 2px 5px #555;
+    border-bottom: 1px solid#999;
+    padding-bottom: 10px;
+    margin: 0 auto; }
+.slide-outer .slide .text p:nth-child(2) {
+    font-size: 20px; letter-spacing: 6px; 
+    margin-top: 20px; }
+.slide-outer .slide .text p:nth-child(3) {
+    font-size: 20px; letter-spacing: 3px;
+    position: relative; top: 150px; }
+
+
+
+/* 애니메이션 연결 */
+.slide-outer .slide.slick-active .text p:nth-child(1) {
+    animation: bounce 1s both 0.5s }
+.slide-outer .slide.slick-active .text p:nth-child(2) {
+    animation: bounceInUp 1s both 1s }
+.slide-outer .slide.slick-active .text p:nth-child(3) {
+    animation: fadeInRight 1s both 1.5s }
+
+
+
+
+.section-outer .section:nth-child(2) {
+    background:limegreen
+}
+.section-outer .section:nth-child(3) {
+    background:skyblue
+}
+.section-outer .section:nth-child(4) {
+    background:orange
+}
