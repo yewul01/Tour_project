@@ -71,6 +71,8 @@
             }
         }]
     })
+
+
     // toggle: 1회 클릭시 1번째 function문 수행 
     // 2회 클릭시 2번째 function문 수행 3회 클릭시 다시 되돌아옴
     $('.plpa').on('click',function(){
@@ -85,4 +87,17 @@
             }
         })
 
+    // 포트폴리오 갤러리 클릭 이벤트시 팝업박스 작동
+       var href,src,alt
+    $('.gallery > li > a').on('click',function(e){
+        e.preventDefault();
+        $('.galleryPopup').addClass('on')
+        href = $(this).attr('href')
+        src = $(this).find('img').attr('src')
+        alt = $(this).find('img').attr('alt')
+        console.log(alt)
+    })
+    $('.galleryPopup .close').on('click',function(){
+        $('.galleryPopup').removeClass('on')
+    })
 })(jQuery)

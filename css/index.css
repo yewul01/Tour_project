@@ -159,9 +159,27 @@ body, html, #wrap { height:100% }
 
 /* 갤러리 팝업박스 */
 .portfolio .galleryPopup {
+    display: none;
     position: fixed; top: 0; bottom: 0; 
     left: 0; right: 0; background: rgba(0,0,0,0.8);
     z-index: 999999999; }
+.portfolio .galleryPopup.on { display: block; }
+.galleryPopup .popupList {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+}
+.galleryPopup .popupList .close {
+    position: absolute; top: -20px; 
+    right: -20px; font-size: 40px; 
+    color: #fff; background: none;
+    cursor: pointer; }
+.galleryPopup .popupList .arrow { 
+    position: absolute; top: 50%;
+    transform: translateY(-50%); 
+    font-size: 40px; color: #fff;
+    background: none; cursor: pointer; }
+.galleryPopup .popupList .prev { left: -40px; }
+.galleryPopup .popupList .next { right: -40px; }
 
 
 
